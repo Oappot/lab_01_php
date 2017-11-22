@@ -16,7 +16,7 @@ class Connect {
     }
 
     function createUser(){    
-        $connection->query("INSERT INTO users(user_login, user_password) VALUES ('test2', 'test2')");
+        $this->connection->query("INSERT INTO users(user_login, user_password) VALUES ('test2', 'test2')");
     }
 }
 
