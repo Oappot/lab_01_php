@@ -1,36 +1,23 @@
 <?php
 
 class Connect {
-    public $connection;
+    private $connection;
 
-    public function __construct(){
+    function __construct(){
         $this->connect();
     }
 
-    public function connect(){
+    function connect(){
         $connection = new PDO('mysql:host=orfarile;dbname=orfarile', 'root', '');
-    }
-
-    function selectTests(){
         
     }
 
-    public function Create(){
-        $connection->query("INSERT INTO users(user_login, user_password) VALUES ('test1', 'test1')");
+    function selectTests(){
+    }
+
+    function createUser(){    
+        $connection->query("INSERT INTO users(user_login, user_password) VALUES ('test2', 'test2')");
     }
 }
 
-class Foo
-{
-    function Variable()
-    {
-        $name = 'Bar';
-        $this->$name(); // Вызываем метод Bar()
-    }
-    
-    function Bar()
-    {
-        echo "This is Bar";
-    }
-}
 ?>
