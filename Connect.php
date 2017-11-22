@@ -8,16 +8,21 @@ class Connect {
     }
 
     function connect(){
-        $connection = new PDO('mysql:host=orfarile;dbname=orfarile', 'root', '');
-        
+        $this->connection = new PDO('mysql:host=orfarile;dbname=orfarile', 'root', '');
     }
 
     function selectTests(){
     }
 
-    function createUser(){    
-        $this->connection->query("INSERT INTO users(user_login, user_password) VALUES ('test2', 'test2')");
+    function createUser($login, $pass){    
+        $this->connection->query("INSERT INTO users(user_login, user_password) VALUES ('
+        ".$login."', '".md5($password)."')");
     }
+
+    function login(){
+        $this->connection->query();
+    }
+    
 }
 
 ?>
