@@ -6,9 +6,9 @@
             <p>Придумайте логин</p> 
             <input type="text" maxlength="20" name='login' placeholder="Login">
             <p>Придумайте пароль</p>
-            <input type="password" maxlength="32" name='password' placeholder="Passsword">
+            <input type="password" maxlength="32" name='password' placeholder="Password">
             <p>Повторите пароль</p>
-            <input type="password" maxlength="32" name='password' placeholder="Repeat passsword">
+            <input type="password" maxlength="32" name='password_r' placeholder="Repeat passsword">
             <br>
             <button type='submit'>Подтвердить</button>
         </form>

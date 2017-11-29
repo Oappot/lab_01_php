@@ -2,7 +2,8 @@
 
 class Connect {
     private $connection;
-
+    private $cryptPass;
+    //MAIN
     function __construct(){
         $this->connect();
     }
@@ -11,18 +12,21 @@ class Connect {
         $this->connection = new PDO('mysql:host=orfarile;dbname=orfarile', 'root', '');
     }
 
-    function selectTests(){
+    function createUser($login, $password){    
+        $this->cryptPass = ($login.$password);
+        $this->connection->query("INSERT INTO users(user_login, user_password) VALUES ('".$login."', '". md5($this->cryptPass.salt) ."')");
     }
 
-    function createUser($login, $pass){    
-        $this->connection->query("INSERT INTO users(user_login, user_password) VALUES ('
-        ".$login."', '".md5($password)."')");
-    }
+    //PRE-RELEASE
 
-    function login(){
-        $this->connection->query();
+    //TEST A
+    function checkUser($login, $password){
+        $this->cryptPass = ($login.$password);
+        $temp = $this->connection->query("SELECT * FROM users WHERE user_login like '".$login."' AND user_password like '".md5($this->cryptPass.salt)."' ;");
+
+        while ($row = $temp->fetch()){
+            print_r ("login = ".$row['user_login']."<br> password = ".$row['user_password']);
+        }
     }
-    
 }
-
 ?>

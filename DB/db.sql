@@ -14,6 +14,6 @@ GRANT ALL ON orfarile.* TO 'orfarile'@'%';
 CREATE TABLE IF NOT EXISTS users(
     user_id INT(10) NOT NULL AUTO_INCREMENT,
     user_login VARCHAR(32) NOT NULL,
-    user_password VARCHAR(100) NOT NULL,
+    user_password VARCHAR(32) NOT NULL,
     PRIMARY KEY (user_id)
 );
